@@ -59,7 +59,7 @@ public class agregaCasa {
     String LAT, LOG;
     Scanner leer = new Scanner(System.in);
 
-    private void agregaC() {
+    public void agregaC() {
         System.out.println("\n ===========Agregar casa===========");
         System.out.println(latDef);
         LAT = leer.nextLine().trim();
@@ -99,7 +99,7 @@ public class agregaCasa {
 
     }
 
-    private void evalua() {
+    public void evalua() {
         System.out.println("===========Estado===========");
         System.out.println(xEstado);
         state = vd.soloLetras(xEstado);
@@ -207,7 +207,7 @@ public class agregaCasa {
 
     }
 
-    private void accionUsuario(String xnombre, String xaPat, String xaMat, String xcel, String xmail, String xpass) {
+    public void accionUsuario(String xnombre, String xaPat, String xaMat, String xcel, String xmail, String xpass) {
         System.out.println("--------Agrega Usuario--------");
         try {
             bd.conectar();
@@ -215,7 +215,7 @@ public class agregaCasa {
             rs = bd.obtenerDatos("usuario", "*", "Email = '" + xmail + "'");
             if (rs.next()) {
                 System.out.println("Usuario existente");
-                agregaUsuario obj = new agregaUsuario(0);
+                agregaUsuario obj = new agregaUsuario();
             } else {
                 s = bd.procedimiento("altaUsuario");
                 rs = bd.obtenerDatos("usuario", "*", "Email = '" + xmail + "'");
@@ -242,7 +242,7 @@ public class agregaCasa {
         }
     }
 
-    private void accion() {
+    public void accion() {
         System.out.println("----------Agrega Casa----------");
         try {
             bd.conectar();
@@ -264,14 +264,14 @@ public class agregaCasa {
 
     }
 
-    private void analiza(String t) {
+    public void analiza(String t) {
         if (t.equalsIgnoreCase("cerrar")) {
             cerrar();
         } else {
         }
     }
 
-    private void cerrar() {
+    public void cerrar() {
         System.out.println("-------Cerrar-------");
         bd.conectar();
         System.out.println(bd.eliminarDatos("usuario", "idUsuario", "" + idUsr + "", ""));

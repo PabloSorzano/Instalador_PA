@@ -50,7 +50,7 @@ public class agregaCuarto {
         agregaC();
     }
 
-    private void agregaC() {
+    public void agregaC() {
         System.out.println("==========Agregar cuarto(s)==========");
         do {
             System.out.println("Ingrese el numero del piso");
@@ -106,7 +106,7 @@ public class agregaCuarto {
 //        evalua();
     }
 
-    private void evalua() {
+    public void evalua() {
         System.out.println("===========Numero Piso===========");
         System.out.println(numeroPiso);
         numP = vd.soloNumeros(String.valueOf(numeroPiso));
@@ -116,14 +116,14 @@ public class agregaCuarto {
         numP = vd.soloNumeros(String.valueOf(numeroPiso));
     }
 
-    private void analiza(String t) {
+    public void analiza(String t) {
         if (t.equalsIgnoreCase("cerrar")) {
             cerrar();
         } else {
         }
     }
 
-    private void cerrar() {
+    public void cerrar() {
         System.out.println("-------Cerrar-------");
         bd.conectar();
         System.out.println(bd.eliminarDatos("usuario", "idUsuario", "" + idUsr + "", ""));

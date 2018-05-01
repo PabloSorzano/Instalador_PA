@@ -6,16 +6,16 @@
 package cecyt9.ipn.logica;
 
 
+import android.view.View;
+
 import java.sql.*;
 import java.util.Scanner;
 
 
 /**
- *
  * @author Sorz Torres
  */
 public class agregaUsuario {
-
 
 
     BD bd = new BD();
@@ -42,110 +42,136 @@ public class agregaUsuario {
             passDef = "Anote la contraseña";
     boolean cOrr = true, conD = true, nama, pata, mata, celu, mai, pass;
 
-    public agregaUsuario(int i) {
-        //String[] fontNames=GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-        //System.out.println(Arrays.toString(fontNames));
-        agregaUsr();
+    //String[] fontNames=GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+    //System.out.println(Arrays.toString(fontNames));
+
+
+    public String getXnombre() {
+        return xnombre;
     }
 
-    private void agregaUsr() {
-        System.out.println("===========Agregar usuario===========");
-        System.out.println(namDef);
-        xnombre = leer.nextLine().trim();
-
-        System.out.println(patDef);
-        xaPat = leer.nextLine().trim();
-
-        System.out.println(matDef);
-        xaMat = leer.nextLine().trim();
-
-        System.out.println(celDef);
-        xcel = leer.nextLine().trim();
-
-        System.out.println(mailDef);
-        xmail = leer.nextLine().trim();
-
-        System.out.println(passDef);
-        xpass = leer.nextLine().trim();
-
-        evalua();
-
+    public void setXnombre(String xnombre) {
+        this.xnombre = xnombre;
     }
 
-    private void evalua() {
+    public String getXaPat() {
+        return xaPat;
+    }
+
+    public void setXaPat(String xaPat) {
+        this.xaPat = xaPat;
+    }
+
+    public String getXaMat() {
+        return xaMat;
+    }
+
+    public void setXaMat(String xaMat) {
+        this.xaMat = xaMat;
+    }
+
+    public String getXcel() {
+        return xcel;
+    }
+
+    public void setXcel(String xcel) {
+        this.xcel = xcel;
+    }
+
+    public String getXmail() {
+        return xmail;
+    }
+
+    public void setXmail(String xmail) {
+        this.xmail = xmail;
+    }
+
+    public String getXpass() {
+        return xpass;
+    }
+
+    public void setXpass(String xpass) {
+        this.xpass = xpass;
+    }
+
+
+
+
+
+public void evalua(){
         System.out.println("===========Nombre===========");
         System.out.println(xnombre);
-        nama = vd.soloLetras(xnombre);
+        nama=vd.soloLetras(xnombre);
 
-        if (xnombre.equals(namDef) || nama == false) {
-            System.out.println("Ingrese un nombre valido");
-            xnombre = leer.nextLine().trim();
-            conD = false;
-            evalua();
-        } else {
+        if(xnombre.equals(namDef)||nama==false){
+        System.out.println("Ingrese un nombre valido");
+        xnombre=leer.nextLine().trim();
+        conD=false;
+        evalua();
+        }else{
         }
         System.out.println("===========Pat===========");
         System.out.println(xaPat);
-        pata = vd.soloLetras(xaPat);
+        pata=vd.soloLetras(xaPat);
 
-        if (xaPat.equals(patDef) || pata == false) {
-            System.out.println("Ingrese un apellido paterno valido");
-            xaPat = leer.nextLine().trim();
-            conD = false;
-            evalua();
-        } else {
+        if(xaPat.equals(patDef)||pata==false){
+        System.out.println("Ingrese un apellido paterno valido");
+        xaPat=leer.nextLine().trim();
+        conD=false;
+        evalua();
+        }else{
         }
         System.out.println("===========Mat===========");
         System.out.println(xaMat);
-        mata = vd.soloLetras(xaMat);
+        mata=vd.soloLetras(xaMat);
 
-        if (xaMat.equals(matDef) || mata == false) {
-            System.out.println("Ingrese un apellido materno valido");
-            xaMat = leer.nextLine().trim();
-            conD = false;
-            evalua();
-        } else {
+        if(xaMat.equals(matDef)||mata==false){
+        System.out.println("Ingrese un apellido materno valido");
+        xaMat=leer.nextLine().trim();
+        conD=false;
+        evalua();
+        }else{
         }
         System.out.println("===========Cel===========");
         System.out.println(xcel);
-        celu = vd.soloNumeros(xcel);
+        celu=vd.soloNumeros(xcel);
 
-        if (xcel.equals(celDef) || xcel.length() != 10 || celu == false) {
-            System.out.println("Ingrese un celular valido");
-            xcel = leer.nextLine().trim();
-            conD = false;
-            evalua();
-        } else if (celu) {
-            conD = true;
+        if(xcel.equals(celDef)||xcel.length()!=10||celu==false){
+        System.out.println("Ingrese un celular valido");
+        xcel=leer.nextLine().trim();
+        conD=false;
+        evalua();
+        }else if(celu){
+        conD=true;
         }
 
         System.out.println("===========Mail===========");
         System.out.println(xmail);
-        mai = vd.soloMail(xmail);
+        mai=vd.soloMail(xmail);
 
-        if (xmail.equals(mailDef) || mai == false) {
-            System.out.println("Ingrese un correo valido");
-            xmail = leer.nextLine().trim();
-            conD = false;
-            evalua();
-        } else {
+        if(xmail.equals(mailDef)||mai==false){
+        System.out.println("Ingrese un correo valido");
+        xmail=leer.nextLine().trim();
+        conD=false;
+        evalua();
+        }else{
         }
         System.out.println("===========Pass===========");
         System.out.println(xpass);
-        pass = vd.sinEspecial(xpass);
+        pass=vd.sinEspecial(xpass);
 
-        if (xpass.equals(passDef) || pass == false) {
-            System.out.println("Ingrese una contraseña valida");
-            xpass = leer.nextLine().trim();
-            conD = false;
-            evalua();
+        if(xpass.equals(passDef)||pass==false){
+        System.out.println("Ingrese una contraseña valida");
+        xpass=leer.nextLine().trim();
+        conD=false;
+        evalua();
 
-        } else {
+        }else{
         }
 
-        if (conD) {
-            agregaCasa j = new agregaCasa(xnombre, xaPat, xaMat, xcel, xmail, xpass);
-        } else {
+        if(conD){
+        agregaCasa j=new agregaCasa(xnombre,xaPat,xaMat,xcel,xmail,xpass);
+        }else{
         }
-    }
+        }
 }
