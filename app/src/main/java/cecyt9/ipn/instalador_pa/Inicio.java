@@ -17,7 +17,7 @@ public class Inicio extends AppCompatActivity {
         inicio = (Button) findViewById(R.id.inicio);
     }
 
-    public void inicio(View view){
+    public void start(View view){
         Intent cambio = new Intent(getApplicationContext(),Usuario.class);
         finish();
         startActivity(cambio);

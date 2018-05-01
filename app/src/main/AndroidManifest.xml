@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".Inicio">
+        <activity android:name="cecyt9.ipn.instalador_pa.Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Usuario"></activity>
+        <activity android:name="cecyt9.ipn.instalador_pa.Usuario"></activity>
     </application>
 
 </manifest>
