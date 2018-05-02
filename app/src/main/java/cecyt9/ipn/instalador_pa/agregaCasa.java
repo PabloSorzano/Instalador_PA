@@ -108,7 +108,7 @@ public class agregaCasa {
         return vd.sinEspecial(getxNumInt());
     }
 
-    public void agregaHouse(){
+    public String agregaHouse(){
 
         conjunto =  new String[idCasa+1];
         this.idCasa = idCasa +1;
@@ -118,6 +118,6 @@ public class agregaCasa {
         for(int i=0; i<casas.size(); i++){
             datos += casas.get(i);
         }
-        System.out.println(datos);
+        return datos;
     }
 }

@@ -97,15 +97,18 @@ public class Casa extends AppCompatActivity {
         } else {
             conD = true;
             if (conD) {
-                Toast.makeText(getApplicationContext(), "Todo bien", Toast.LENGTH_SHORT).show();
-                agCasa.agregaHouse();
-                idUsr = agCasa.getIdUsr();
-                idCasa = agCasa.getIdCasa();
                 Toast.makeText(getApplicationContext(), "Casa dada de alta", Toast.LENGTH_SHORT).show();
+                idUsr = getIntent().getExtras().getInt("idUsr");
+                agCasa.setIdUsr(idUsr);
+                Toast.makeText(getApplicationContext(), agCasa.agregaHouse(), Toast.LENGTH_LONG).show();
+                idCasa = agCasa.getIdCasa();
 
-                //Intent casa = new Intent(getApplicationContext(), Casa.class);
-                //finish();
-                //startActivity(casa);
+
+                Intent casa = new Intent(getApplicationContext(), Cuarto.class);
+                casa.putExtra("idUsr", idUsr);
+                casa.putExtra("idCasa", idCasa);
+                finish();
+                startActivity(casa);
             }
         }
     }

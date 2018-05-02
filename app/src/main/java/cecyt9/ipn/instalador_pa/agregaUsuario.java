@@ -70,7 +70,7 @@ public class agregaUsuario {
         return vd.sinEspecial(getXpass());//sin especial
     }
 
-    public void agregaUsuario(){
+    public String agregaUsuario(){
         conjunto =  new String[idUsr+1];
         this.idUsr = idUsr +1;
         conjunto[conjunto.length-1] = ""+getIdUsr()+","+getXaPat()+","+getXaMat()+","+getXcel()+","+getXmail()+","+getXpass()+"";
@@ -78,6 +78,6 @@ public class agregaUsuario {
         for(int i=0; i<usuarios.size(); i++){
             datos += usuarios.get(i);
         }
-        System.out.println(datos);
+        return datos;
     }
 }

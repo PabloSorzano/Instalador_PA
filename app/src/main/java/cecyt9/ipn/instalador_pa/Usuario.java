@@ -79,13 +79,14 @@ public class Usuario extends AppCompatActivity {
         } else{
             conD = true;
             if (conD) {
-                Toast.makeText(getApplicationContext(), "Todo bien", Toast.LENGTH_SHORT).show();
-                agUsr.agregaUsuario();
-                idUsr = agUsr.getIdUsr();
-                System.out.println(idUsr);
                 Toast.makeText(getApplicationContext(), "Usuario dada de alta", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), agUsr.agregaUsuario(), Toast.LENGTH_LONG).show();
+                idUsr = agUsr.getIdUsr();
+                System.out.println("Usuario: "+idUsr);
+
 
                 Intent casa = new Intent(getApplicationContext(), Casa.class);
+                casa.putExtra("idUsr", idUsr);
                 finish();
                 startActivity(casa);
             }
