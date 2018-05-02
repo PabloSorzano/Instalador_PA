@@ -35,6 +35,7 @@
         android:layout_width="104dp"
         android:layout_height="147dp"
         android:layout_marginTop="8dp"
+        android:onClick="agregaFoco"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="@+id/nombreCuarto"
         app:layout_constraintTop_toBottomOf="@+id/nombreCuarto"
@@ -47,6 +48,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="agregaPuerta"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/foco"
         app:layout_constraintTop_toBottomOf="@+id/nombreCuarto"
@@ -57,6 +59,7 @@
         android:layout_width="104dp"
         android:layout_height="165dp"
         android:layout_marginTop="8dp"
+        android:onClick="agregaCamara"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="@+id/foco"
         app:layout_constraintTop_toBottomOf="@+id/foco"
@@ -69,16 +72,20 @@
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="agregaClima"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/camara"
         app:layout_constraintTop_toBottomOf="@+id/puerta"
         app:srcCompat="@drawable/aire" />
 
     <Button
-        android:id="@+id/agregaCu"
+        android:id="@+id/cerrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AGREGAR CUARTO"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:text="CERRAR"
+        android:onClick="cerrar"
         app:layout_constraintStart_toStartOf="@+id/camara"
         app:layout_constraintTop_toBottomOf="@+id/camara" />
 

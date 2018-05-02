@@ -73,7 +73,7 @@ public class agregaUsuario {
     public String agregaUsuario(){
         conjunto =  new String[idUsr+1];
         this.idUsr = idUsr +1;
-        conjunto[conjunto.length-1] = ""+getIdUsr()+","+getXaPat()+","+getXaMat()+","+getXcel()+","+getXmail()+","+getXpass()+"";
+        conjunto[conjunto.length-1] = "Usuario: "+getIdUsr()+", A.Paterno: "+getXaPat()+", A.Materno: "+getXaMat()+", Celular: "+getXcel()+", E-mail: "+getXmail()+", Password: "+getXpass()+"";
         usuarios.add(conjunto[conjunto.length-1]);
         for(int i=0; i<usuarios.size(); i++){
             datos += usuarios.get(i);
