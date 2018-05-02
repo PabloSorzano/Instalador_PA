@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cecyt9.ipn.logica;
+package cecyt9.ipn.data;
 
 import java.sql.*;
 import java.util.logging.Level;
